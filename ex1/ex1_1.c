@@ -50,7 +50,11 @@ float add_arr(flaot_num *flaot_num_t)
     return num;
 }
 
-
+/**
+ * @brief 简单的连续扫描函数
+ * 
+ * @param arr 
+ */
 void continue_scan(flaot_num *arr)
 {
     int flag = 0, exflag = 0;
