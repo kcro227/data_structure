@@ -1,2 +1,6 @@
 /builde
 /.vscode
+ex1/.vscode/launch.json
+*.exe
+ex1/.vscode/tasks.json
+*.json
