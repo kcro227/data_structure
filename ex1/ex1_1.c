@@ -1,5 +1,8 @@
 #include "stdio.h"
-
+/**
+ * 定义小数存储的结构体
+ * 
+ */
 typedef struct
 {
     int arr_len;
@@ -8,37 +11,46 @@ typedef struct
 
 flaot_num arr;
 
+/**
+ * @brief 数据扫描函数，用于获取用户的输入数据
+ * 
+ * @param array 为float_num类型的结构体指针
+ */
 void dat_scan(flaot_num *array)
 {
-    int i = 0;
     char flag;
     printf("请输入一串小数，并用空格分开,以回车结束：\n");
+    /**
+     * @brief 当用户输入的字符类型为回车时，跳出while循环，并且结束数据个数累加
+     * 
+     */
     while (flag != '\n')
     {
         scanf("%f%c", &(array->arr[i]), &flag);
-        // printf("i = %d flag = %c arr%d = %.2f\n", i, flag, i, array->arr[i]);
-        i++;
+        (array->arr_len)++;
     }
-    array->arr_len = i;
-    // printf("i = %d\n", i);
+     
 }
-
-float add_arr(flaot_num *a)
+/**
+ * @brief 小数的加法运算，从flaot_num类型的结构体中获取数据。
+ * 
+ * @param flaot_num_t
+ * @return float 类型的求和结果
+ */
+float add_arr(flaot_num *flaot_num_t)
 {
     float num = 0;
     int i = 0;
-    int len = a->arr_len;
-    printf("add_arr debug:\n");
-
+    int len = flaot_num_t->arr_len;
     while (i < len)
     {
-        num += (a->arr[i]);
-        printf("a%d = %.2f,len = %d\n", i, (a->arr[i]), len);
+        num += (flaot_num_t->arr[i]);
         i++;
     }
-
     return num;
 }
+
+
 void continue_scan(flaot_num *arr)
 {
     int flag = 0, exflag = 0;
@@ -58,7 +70,6 @@ void continue_scan(flaot_num *arr)
         {
             printf("是否继续计算？(Y/N)");
             scanf("%c", &exit);
-            // printf("exit = %c",exit);
             if (exit == 'Y')
                 flag = 0;
             else
@@ -70,8 +81,6 @@ void continue_scan(flaot_num *arr)
 }
 int main()
 {
-    continue_scan(&arr);
-    // printf("main debug:\n");
-    
+    continue_scan(&arr);  
     return 0;
 }
