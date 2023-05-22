@@ -42,7 +42,6 @@ int DataTran(SeqList *List)
         temp = List->data[i];
         List->data[i] = List->data[j];
         List->data[j] = temp;
-        printf("i = %d j = %d\n", i, j);
     }
     return 0;
 }
