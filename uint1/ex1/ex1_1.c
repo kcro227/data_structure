@@ -26,7 +26,7 @@ void dat_scan(flaot_num *array)
      */
     while (flag != '\n')
     {
-        scanf("%f%c", &(array->arr[i]), &flag);
+        scanf("%f%c", &(array->arr[(array->arr_len)]), &flag);
         (array->arr_len)++;
     }
      
